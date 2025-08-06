@@ -1,0 +1,1146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatGPT-OSS Local Setup Tutorial | GGUF Loader Team - Run AI Models on Windows</title>
+    <meta name="description"
+        content="Complete guide to running ChatGPT-OSS 20B and 120B models locally on Windows. GGUF Loader team's tutorial covers hardware requirements, CPU-only optimization, and step-by-step setup for low-end PCs.">
+    <meta name="keywords"
+        content="ChatGPT-OSS, GGUF Loader, local AI, Windows AI, CPU-only AI, low-end PC AI, ChatGPT local, AI tutorial, machine learning, LLM setup">
+
+    <!-- Enhanced SEO meta tags -->
+    <meta name="theme-color" content="#2563eb">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="author" content="GGUF Loader Team">
+    <meta name="publisher" content="GGUF Loader Team">
+    <meta name="language" content="en-US">
+    <meta name="revisit-after" content="7 days">
+    <meta name="rating" content="general">
+    <link rel="canonical" href="https://chatgpt-oss-tutorial.example.com/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://chatgpt-oss-tutorial.example.com/">
+    <meta property="og:title" content="ChatGPT-OSS Local Setup Tutorial | GGUF Loader Team">
+    <meta property="og:description"
+        content="Learn to run ChatGPT-OSS models locally on Windows with GGUF Loader - optimized for CPU-only and low-end PCs with unique addon system.">
+    <meta property="og:image" content="https://chatgpt-oss-tutorial.example.com/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="ChatGPT-OSS Tutorial">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://chatgpt-oss-tutorial.example.com/">
+    <meta property="twitter:title" content="ChatGPT-OSS Local Setup Tutorial | GGUF Loader Team">
+    <meta property="twitter:description"
+        content="Learn to run ChatGPT-OSS models locally on Windows with GGUF Loader - optimized for CPU-only and low-end PCs.">
+    <meta property="twitter:image" content="https://chatgpt-oss-tutorial.example.com/twitter-image.jpg">
+    <meta property="twitter:creator" content="@GGUFLoader">
+    <meta property="twitter:site" content="@GGUFLoader">
+
+    <!-- Additional SEO -->
+    <meta name="geo.region" content="US">
+    <meta name="geo.placename" content="United States">
+    <meta name="ICBM" content="39.7392, -104.9903">
+    <meta name="DC.title" content="ChatGPT-OSS Local Setup Tutorial">
+    <meta name="DC.creator" content="GGUF Loader Team">
+    <meta name="DC.subject" content="AI, Machine Learning, ChatGPT, Local AI Setup">
+    <meta name="DC.description" content="Complete guide to running ChatGPT-OSS models locally on Windows">
+    <meta name="DC.publisher" content="GGUF Loader Team">
+    <meta name="DC.contributor" content="GGUF Loader Team">
+    <meta name="DC.date" content="2024-01-01">
+    <meta name="DC.type" content="Text">
+    <meta name="DC.format" content="text/html">
+    <meta name="DC.identifier" content="https://chatgpt-oss-tutorial.example.com/">
+    <meta name="DC.language" content="en-US">
+    <meta name="DC.coverage" content="Worldwide">
+    <meta name="DC.rights" content="© 2024 GGUF Loader Team">""
+
+    <!-- Preload critical resources -->
+    <link rel="preload" href="assets/styles/main.css" as="style">
+    <link rel="preload" href="assets/scripts/main.js" as="script">
+
+    <!-- DNS prefetch for external resources -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="assets/styles/main.css">
+
+    <!-- Favicon and app icons -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        "headline": "ChatGPT-OSS Local Setup Tutorial | GGUF Loader Team",
+        "description": "Complete guide to running ChatGPT-OSS 20B and 120B models locally on Windows. GGUF Loader team's tutorial covers hardware requirements, CPU-only optimization, and step-by-step setup for low-end PCs.",
+        "image": [
+            "https://chatgpt-oss-tutorial.example.com/images/chatgpt-oss-setup-1x1.jpg",
+            "https://chatgpt-oss-tutorial.example.com/images/chatgpt-oss-setup-4x3.jpg",
+            "https://chatgpt-oss-tutorial.example.com/images/chatgpt-oss-setup-16x9.jpg"
+        ],
+        "author": {
+            "@type": "Organization",
+            "name": "GGUF Loader Team",
+            "url": "https://github.com/gguf-loader",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://chatgpt-oss-tutorial.example.com/images/gguf-loader-logo.png"
+            }
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "GGUF Loader Team",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://chatgpt-oss-tutorial.example.com/images/gguf-loader-logo.png"
+            }
+        },
+        "datePublished": "2024-01-01",
+        "dateModified": "2024-01-01",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://chatgpt-oss-tutorial.example.com/"
+        },
+        "articleSection": "Technology",
+        "keywords": ["ChatGPT-OSS", "GGUF Loader", "local AI", "Windows AI", "CPU-only AI", "low-end PC AI"],
+        "about": [
+            {
+                "@type": "Thing",
+                "name": "ChatGPT-OSS",
+                "description": "Open source ChatGPT models for local deployment"
+            },
+            {
+                "@type": "SoftwareApplication",
+                "name": "GGUF Loader",
+                "operatingSystem": "Windows",
+                "applicationCategory": "DeveloperApplication",
+                "description": "Windows-only, lightweight AI model loader optimized for CPU-only and low-end PCs"
+            }
+        ],
+        "mentions": [
+            {
+                "@type": "SoftwareApplication",
+                "name": "LM Studio",
+                "operatingSystem": ["Windows", "macOS", "Linux"],
+                "applicationCategory": "DeveloperApplication"
+            },
+            {
+                "@type": "SoftwareApplication",
+                "name": "Ollama",
+                "operatingSystem": ["Windows", "macOS", "Linux"],
+                "applicationCategory": "DeveloperApplication"
+            }
+        ]
+    }
+    </script>
+
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Can I run ChatGPT-OSS models without a GPU?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, you can run ChatGPT-OSS models on CPU-only systems. The 20B model runs at 2-5 tokens/second on CPU, while the 120B model is very slow at 0.5-1 tokens/second. GGUF Loader is specifically optimized for CPU-only Windows systems."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What are the minimum hardware requirements for ChatGPT-OSS 20B?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "For ChatGPT-OSS 20B, you need a minimum of 16GB RAM (32GB recommended), 40GB free storage space, and any modern CPU. GPU is optional but improves performance significantly."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Why choose GGUF Loader over other tools?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "GGUF Loader is Windows-only and specifically optimized for CPU-only systems and low-end PCs. It features a unique addon system, floating button interface, and is lightweight compared to cross-platform alternatives."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I run ChatGPT-OSS 120B on a regular PC?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "ChatGPT-OSS 120B requires 64GB+ RAM and 240GB storage. It's very slow on CPU-only systems (0.5-1 tokens/second) and is better suited for enterprise-grade hardware with high-end GPUs."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What makes GGUF Loader unique?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "GGUF Loader features a unique addon system for extensibility, a floating button interface for easy access, Windows-specific optimizations, and is designed specifically for lightweight, CPU-only operation on low-end PCs."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <!-- Software Application Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "GGUF Loader",
+        "operatingSystem": "Windows",
+        "applicationCategory": "DeveloperApplication",
+        "description": "Windows-only, lightweight AI model loader optimized for CPU-only systems and low-end PCs. Features unique addon system and floating button interface.",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "downloadUrl": "https://github.com/gguf-loader/gguf-loader",
+        "softwareVersion": "1.0",
+        "datePublished": "2024-01-01",
+        "author": {
+            "@type": "Organization",
+            "name": "GGUF Loader Team"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "ratingCount": "150",
+            "bestRating": "5",
+            "worstRating": "1"
+        },
+        "featureList": [
+            "CPU-only optimization",
+            "Windows-specific optimizations",
+            "Lightweight design for low-end PCs",
+            "Unique addon system",
+            "Floating button interface",
+            "GGUF format specialist",
+            "OpenAI-compatible API"
+        ]
+    }
+    </script>
+
+    <!-- HowTo Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        "name": "How to Run ChatGPT-OSS Models Locally on Windows",
+        "description": "Step-by-step guide to setting up and running ChatGPT-OSS models locally using GGUF Loader on Windows systems.",
+        "image": "https://chatgpt-oss-tutorial.example.com/images/setup-guide.jpg",
+        "totalTime": "PT30M",
+        "estimatedCost": {
+            "@type": "MonetaryAmount",
+            "currency": "USD",
+            "value": "0"
+        },
+        "supply": [
+            {
+                "@type": "HowToSupply",
+                "name": "Windows PC with 16GB+ RAM"
+            },
+            {
+                "@type": "HowToSupply",
+                "name": "40GB+ free storage space"
+            },
+            {
+                "@type": "HowToSupply",
+                "name": "GGUF Loader software"
+            }
+        ],
+        "tool": [
+            {
+                "@type": "HowToTool",
+                "name": "GGUF Loader"
+            }
+        ],
+        "step": [
+            {
+                "@type": "HowToStep",
+                "name": "Check Hardware Requirements",
+                "text": "Verify your Windows PC has at least 16GB RAM and 40GB free storage space for the 20B model.",
+                "url": "https://chatgpt-oss-tutorial.example.com/#hardware"
+            },
+            {
+                "@type": "HowToStep",
+                "name": "Choose Your Tool",
+                "text": "Select GGUF Loader for Windows-only, CPU-optimized performance, especially for low-end PCs.",
+                "url": "https://chatgpt-oss-tutorial.example.com/#tools"
+            },
+            {
+                "@type": "HowToStep",
+                "name": "Download and Install",
+                "text": "Download GGUF Loader from the official repository and follow installation instructions.",
+                "url": "https://chatgpt-oss-tutorial.example.com/#tutorials"
+            }
+        ]
+    }
+    </script>
+</head>
+
+<body>
+    <!-- Critical inline CSS for above-the-fold content -->
+    <style>
+        /* Critical path CSS - inlined for performance */
+        .header {
+            background-color: var(--color-background);
+            border-bottom: 1px solid var(--color-border);
+            position: sticky;
+            top: 0;
+            z-index: 100
+        }
+
+        .hero {
+            background: linear-gradient(135deg, var(--color-background) 0%, var(--color-background-alt) 100%);
+            padding: var(--space-8) 0
+        }
+
+        .hero__title {
+            font-size: var(--font-size-4xl);
+            color: var(--color-text);
+            margin-bottom: var(--space-3)
+        }
+    </style>
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://chatgpt-oss-tutorial.example.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "ChatGPT-OSS Tutorial",
+                "item": "https://chatgpt-oss-tutorial.example.com/"
+            }
+        ]
+    }
+    </script>
+
+    <!-- Header with GGUF Loader Team Attribution -->
+    <header class="header" id="header" role="banner">
+        <div class="container">
+            <!-- Breadcrumb Navigation -->
+            <nav aria-label="Breadcrumb" class="breadcrumb">
+                <ol class="breadcrumb-list" itemscope itemtype="https://schema.org/BreadcrumbList">
+                    <li class="breadcrumb-item" itemprop="itemListElement" itemscope
+                        itemtype="https://schema.org/ListItem">
+                        <a href="/" itemprop="item">
+                            <span itemprop="name">Home</span>
+                        </a>
+                        <meta itemprop="position" content="1" />
+                    </li>
+                    <li class="breadcrumb-item active" itemprop="itemListElement" itemscope
+                        itemtype="https://schema.org/ListItem">
+                        <span itemprop="name">ChatGPT-OSS Tutorial</span>
+                        <meta itemprop="position" content="2" />
+                    </li>
+                </ol>
+            </nav>
+
+            <div class="header__brand">
+                <h1 class="header__title">ChatGPT-OSS Tutorial</h1>
+                <p class="header__attribution">by GGUF Loader Team</p>
+            </div>
+            <nav class="header__nav" aria-label="Main navigation" role="navigation">
+                <ul class="nav-list" role="menubar">
+                    <li role="none"><a href="#hero" class="nav-link" role="menuitem"
+                            aria-label="Navigate to home section">Home</a></li>
+                    <li role="none"><a href="#hardware" class="nav-link" role="menuitem"
+                            aria-label="Navigate to hardware requirements section">Hardware</a></li>
+                    <li role="none"><a href="#tools" class="nav-link" role="menuitem"
+                            aria-label="Navigate to tools comparison section">Tools</a></li>
+                    <li role="none"><a href="#tutorials" class="nav-link" role="menuitem"
+                            aria-label="Navigate to tutorials section">Tutorials</a></li>
+                    <li role="none"><a href="#troubleshooting" class="nav-link" role="menuitem"
+                            aria-label="Navigate to troubleshooting section">Help</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero" role="main" aria-labelledby="hero-title">
+        <div class="container">
+            <div class="hero__content">
+                <h2 class="hero__title" id="hero-title">Run ChatGPT-OSS Models Locally</h2>
+                <p class="hero__subtitle">Complete guide to setting up and running ChatGPT-OSS 20B and 120B models on
+                    your own hardware</p>
+                <div class="hero__models">
+                    <div class="model-card">
+                        <h3 class="model-card__title">ChatGPT-OSS 20B</h3>
+                        <p class="model-card__description">Optimized for consumer hardware with excellent performance
+                        </p>
+                        <div class="model-card__specs">
+                            <span class="spec-tag">16GB+ RAM</span>
+                            <span class="spec-tag">CPU/GPU Compatible</span>
+                        </div>
+                    </div>
+                    <div class="model-card">
+                        <h3 class="model-card__title">ChatGPT-OSS 120B</h3>
+                        <p class="model-card__description">Professional-grade model for high-end systems</p>
+                        <div class="model-card__specs">
+                            <span class="spec-tag">64GB+ RAM</span>
+                            <span class="spec-tag">Enterprise Hardware</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero__cta">
+                    <a href="#hardware" class="btn btn--primary">Check Hardware Requirements</a>
+                    <a href="#tools" class="btn btn--secondary">Choose Your Tool</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content Sections -->
+    <main class="main" id="main">
+        <!-- Hardware Requirements Section -->
+        <section class="section" id="hardware">
+            <div class="container">
+                <h2 class="section__title">Hardware Requirements</h2>
+                <p class="section__description">Check if your system can run ChatGPT-OSS models and get personalized
+                    recommendations</p>
+
+                <!-- Hardware Requirement Cards -->
+                <div class="hardware-cards">
+                    <div class="hardware-card" data-model="20B" data-min-ram="16" data-recommended-ram="32"
+                        data-min-storage="40" data-cpu-tokens="3" data-gpu-tokens="22">
+                        <div class="hardware-card__header">
+                            <h3 class="hardware-card__title">ChatGPT-OSS 20B</h3>
+                            <span class="hardware-card__badge hardware-card__badge--recommended">Recommended</span>
+                        </div>
+                        <div class="hardware-card__content">
+                            <div class="hardware-specs">
+                                <div class="spec-item">
+                                    <span class="spec-item__label">Minimum RAM:</span>
+                                    <span class="spec-item__value">16GB</span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-item__label">Recommended RAM:</span>
+                                    <span class="spec-item__value">32GB</span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-item__label">Storage:</span>
+                                    <span class="spec-item__value">40GB free space</span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-item__label">GPU (Optional):</span>
+                                    <span class="spec-item__value">8GB+ VRAM</span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-item__label">CPU Support:</span>
+                                    <span class="spec-item__value">Yes (slower)</span>
+                                </div>
+                            </div>
+                            <div class="performance-info">
+                                <h4 class="performance-info__title">Expected Performance:</h4>
+                                <ul class="performance-list">
+                                    <li>CPU-only: 2-5 tokens/second</li>
+                                    <li>With GPU: 15-30 tokens/second</li>
+                                    <li>Suitable for most consumer PCs</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="hardware-card" data-model="120B" data-min-ram="64" data-recommended-ram="128"
+                        data-min-storage="240" data-cpu-tokens="0.7" data-gpu-tokens="11">
+                        <div class="hardware-card__header">
+                            <h3 class="hardware-card__title">ChatGPT-OSS 120B</h3>
+                            <span class="hardware-card__badge hardware-card__badge--enterprise">Enterprise</span>
+                        </div>
+                        <div class="hardware-card__content">
+                            <div class="hardware-specs">
+                                <div class="spec-item">
+                                    <span class="spec-item__label">Minimum RAM:</span>
+                                    <span class="spec-item__value">64GB</span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-item__label">Recommended RAM:</span>
+                                    <span class="spec-item__value">128GB+</span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-item__label">Storage:</span>
+                                    <span class="spec-item__value">240GB free space</span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-item__label">GPU (Recommended):</span>
+                                    <span class="spec-item__value">24GB+ VRAM</span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-item__label">CPU Support:</span>
+                                    <span class="spec-item__value">Very slow</span>
+                                </div>
+                            </div>
+                            <div class="performance-info">
+                                <h4 class="performance-info__title">Expected Performance:</h4>
+                                <ul class="performance-list">
+                                    <li>CPU-only: 0.5-1 tokens/second</li>
+                                    <li>With GPU: 8-15 tokens/second</li>
+                                    <li>Requires enterprise-grade hardware</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hardware Compatibility Checker -->
+                <div class="compatibility-checker">
+                    <h3 class="compatibility-checker__title">Check Your Hardware Compatibility</h3>
+                    <p class="compatibility-checker__description">Enter your system specifications to get personalized
+                        recommendations</p>
+
+                    <form class="hardware-form" id="hardwareForm" role="form"
+                        aria-labelledby="compatibility-checker-title">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="ram" class="form-label">System RAM (GB)</label>
+                                <select id="ram" name="ram" class="form-select" required aria-describedby="ram-help">
+                                    <option value="">Select RAM amount</option>
+                                    <option value="8">8GB</option>
+                                    <option value="16">16GB</option>
+                                    <option value="32">32GB</option>
+                                    <option value="64">64GB</option>
+                                    <option value="128">128GB or more</option>
+                                </select>
+                                <div id="ram-help" class="sr-only">Select the amount of system RAM available on your
+                                    computer</div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="gpu" class="form-label">Graphics Card</label>
+                                <select id="gpu" name="gpu" class="form-select" required aria-describedby="gpu-help">
+                                    <option value="">Select GPU type</option>
+                                    <option value="none" data-vram="0" data-multiplier="1" data-performance="cpu-only">
+                                        No dedicated GPU / Integrated graphics</option>
+                                    <option value="low" data-vram="4" data-multiplier="2" data-performance="limited">
+                                        Entry-level GPU (4GB VRAM or less)</option>
+                                    <option value="mid" data-vram="10" data-multiplier="4" data-performance="good">
+                                        Mid-range GPU (6-12GB VRAM)</option>
+                                    <option value="high" data-vram="16" data-multiplier="6"
+                                        data-performance="excellent">High-end GPU (16GB+ VRAM)</option>
+                                    <option value="enterprise" data-vram="24" data-multiplier="8"
+                                        data-performance="optimal">Enterprise GPU (24GB+ VRAM)</option>
+                                </select>
+                                <div id="gpu-help" class="sr-only">Select your graphics card type or choose no dedicated
+                                    GPU if you only have integrated graphics</div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="storage" class="form-label">Available Storage (GB)</label>
+                                <select id="storage" name="storage" class="form-select" required>
+                                    <option value="">Select storage space</option>
+                                    <option value="50">50GB or less</option>
+                                    <option value="100">50-100GB</option>
+                                    <option value="250">100-250GB</option>
+                                    <option value="500">250GB or more</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="usage" class="form-label">Primary Use Case</label>
+                                <select id="usage" name="usage" class="form-select" required>
+                                    <option value="">Select use case</option>
+                                    <option value="casual">Casual experimentation</option>
+                                    <option value="development">Development and testing</option>
+                                    <option value="production">Production use</option>
+                                    <option value="research">Research and analysis</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn--primary compatibility-checker__submit"
+                            aria-describedby="submit-help">
+                            Check Compatibility
+                        </button>
+                        <div id="submit-help" class="sr-only">Submit the form to get personalized hardware compatibility
+                            recommendations</div>
+                    </form>
+
+                    <!-- Results will be displayed here -->
+                    <div class="compatibility-results" id="compatibilityResults" style="display: none;" role="region"
+                        aria-labelledby="results-title" aria-live="polite">
+                        <div class="results-content" id="resultsContent">
+                            <!-- Dynamic content will be inserted here -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CPU-Only Guidance Section -->
+                <div class="cpu-guidance">
+                    <h3 class="cpu-guidance__title">Running Without a GPU (CPU-Only)</h3>
+                    <div class="cpu-guidance__content">
+                        <div class="cpu-guidance__info">
+                            <h4>What to Expect with CPU-Only Setup:</h4>
+                            <ul class="cpu-guidance__list">
+                                <li><strong>ChatGPT-OSS 20B:</strong> Usable but slow (2-5 tokens/second)</li>
+                                <li><strong>ChatGPT-OSS 120B:</strong> Very slow, not recommended for regular use</li>
+                                <li><strong>Memory Usage:</strong> Requires significant RAM allocation</li>
+                                <li><strong>Response Time:</strong> Expect 30-60 seconds for typical responses</li>
+                            </ul>
+                        </div>
+
+                        <div class="cpu-guidance__recommendations">
+                            <h4>CPU-Only Optimization Tips:</h4>
+                            <div class="tip-cards">
+                                <div class="tip-card">
+                                    <h5 class="tip-card__title">Memory Management</h5>
+                                    <p class="tip-card__content">Close unnecessary applications and allocate maximum
+                                        available RAM to the model</p>
+                                </div>
+                                <div class="tip-card">
+                                    <h5 class="tip-card__title">Thread Configuration</h5>
+                                    <p class="tip-card__content">Use all available CPU cores but leave 1-2 cores for
+                                        system operations</p>
+                                </div>
+                                <div class="tip-card">
+                                    <h5 class="tip-card__title">Model Selection</h5>
+                                    <p class="tip-card__content">Start with 20B model and consider quantized versions
+                                        for better performance</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="cpu-guidance__tools">
+                            <h4>Best Tools for CPU-Only Setup:</h4>
+                            <div class="tool-recommendations">
+                                <div class="tool-rec">
+                                    <span class="tool-rec__name">GGUF Loader</span>
+                                    <span class="tool-rec__rating">★★★★★</span>
+                                    <span class="tool-rec__note">Windows-only, lightweight, CPU-optimized with
+                                        addons</span>
+                                </div>
+                                <div class="tool-rec">
+                                    <span class="tool-rec__name">LM Studio</span>
+                                    <span class="tool-rec__rating">★★★★☆</span>
+                                    <span class="tool-rec__note">Good CPU support with GUI</span>
+                                </div>
+                                <div class="tool-rec">
+                                    <span class="tool-rec__name">Ollama</span>
+                                    <span class="tool-rec__rating">★★★☆☆</span>
+                                    <span class="tool-rec__note">Basic CPU support</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hidden data sections for JavaScript to read -->
+                <div class="hidden-data"
+                    style="display: none !important; visibility: hidden; position: absolute; left: -9999px; width: 0; height: 0; overflow: hidden;">
+                    <!-- Tool recommendations data -->
+                    <div id="toolData">
+                        <div class="tool-info" data-tool="GGUF Loader" data-rating="5" data-cpu-support="excellent"
+                            data-gpu-support="none" data-beginner-friendly="true">
+                            <span data-usage="casual">Windows-only, lightweight, perfect for low-end PCs with unique
+                                addons</span>
+                            <span data-usage="development">CPU-optimized with floating button interface, ideal for
+                                Windows development</span>
+                            <span data-usage="production">Lightweight Windows solution with addon system for
+                                production</span>
+                            <span data-usage="research">CPU-only optimization perfect for Windows research
+                                environments</span>
+                        </div>
+                        <div class="tool-info" data-tool="LM Studio" data-rating="4" data-cpu-support="good"
+                            data-gpu-support="excellent" data-beginner-friendly="true">
+                            <span data-usage="casual">Good GUI for beginners, decent CPU support</span>
+                            <span data-usage="development">Excellent GUI with good development features</span>
+                            <span data-usage="production">GUI-based, good for small production setups</span>
+                            <span data-usage="research">User-friendly interface for research work</span>
+                        </div>
+                        <div class="tool-info" data-tool="Ollama" data-rating="3" data-cpu-support="basic"
+                            data-gpu-support="good" data-beginner-friendly="false">
+                            <span data-usage="casual">Command-line interface, basic CPU support</span>
+                            <span data-usage="development">Good for automation and scripting</span>
+                            <span data-usage="production">Excellent for production automation</span>
+                            <span data-usage="research">CLI-based, good for automated research</span>
+                        </div>
+                    </div>
+
+                    <!-- Recommendation templates -->
+                    <div id="recommendationTemplates">
+                        <div data-scenario="20b-only">Start with the 20B model - it's perfect for your hardware
+                            configuration</div>
+                        <div data-scenario="both-models">You can run both models, but 20B will provide better
+                            performance for most use cases</div>
+                        <div data-scenario="insufficient">Consider upgrading your hardware to run ChatGPT-OSS models
+                            effectively</div>
+                        <div data-scenario="no-gpu">Your system can run models on CPU, but adding a GPU would
+                            dramatically improve performance</div>
+                        <div data-scenario="low-ram">Consider upgrading to 32GB RAM for smoother operation and better
+                            multitasking</div>
+                        <div data-scenario="production-no-gpu">For production use, we strongly recommend GPU
+                            acceleration</div>
+                        <div data-scenario="casual-20b">The 20B model with GGUF Loader is perfect for casual
+                            experimentation</div>
+                        <div data-scenario="120b-cpu-warning">120B model is very slow on CPU-only - consider 20B instead
+                        </div>
+                        <div data-scenario="gpu-upgrade">Consider adding a GPU for significantly better performance
+                        </div>
+                    </div>
+
+                    <!-- Performance expectations -->
+                    <div id="performanceData">
+                        <div data-model="20B" data-gpu="none" data-tokens="3">~3 tokens/second (CPU only)</div>
+                        <div data-model="20B" data-gpu="low" data-tokens="6">~6 tokens/second (Entry GPU)</div>
+                        <div data-model="20B" data-gpu="mid" data-tokens="12">~12 tokens/second (Mid-range GPU)</div>
+                        <div data-model="20B" data-gpu="high" data-tokens="18">~18 tokens/second (High-end GPU)</div>
+                        <div data-model="20B" data-gpu="enterprise" data-tokens="24">~24 tokens/second (Enterprise GPU)
+                        </div>
+                        <div data-model="120B" data-gpu="none" data-tokens="0.7">~0.7 tokens/second (CPU only)</div>
+                        <div data-model="120B" data-gpu="low" data-tokens="1.4">~1.4 tokens/second (Entry GPU)</div>
+                        <div data-model="120B" data-gpu="mid" data-tokens="2.8">~2.8 tokens/second (Mid-range GPU)</div>
+                        <div data-model="120B" data-gpu="high" data-tokens="4.2">~4.2 tokens/second (High-end GPU)</div>
+                        <div data-model="120B" data-gpu="enterprise" data-tokens="5.6">~5.6 tokens/second (Enterprise
+                            GPU)</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tool Comparison Section -->
+        <section class="section" id="tools">
+            <div class="container">
+                <h2 class="section__title">Choose Your Tool</h2>
+                <p class="section__description">Compare the three main tools for running ChatGPT-OSS models locally</p>
+
+                <!-- Tool Comparison Table -->
+                <div class="tool-comparison">
+                    <div class="comparison-table-wrapper">
+                        <table class="comparison-table" role="table" aria-label="Tool comparison">
+                            <thead>
+                                <tr>
+                                    <th scope="col" class="feature-column">Feature</th>
+                                    <th scope="col" class="tool-column tool-column--featured">
+                                        <div class="tool-header">
+                                            <h3 class="tool-name">GGUF Loader</h3>
+                                            <span class="tool-badge tool-badge--featured">Our Specialty</span>
+                                        </div>
+                                    </th>
+                                    <th scope="col" class="tool-column">
+                                        <div class="tool-header">
+                                            <h3 class="tool-name">LM Studio</h3>
+                                            <span class="tool-badge">GUI-Based</span>
+                                        </div>
+                                    </th>
+                                    <th scope="col" class="tool-column">
+                                        <div class="tool-header">
+                                            <h3 class="tool-name">Ollama</h3>
+                                            <span class="tool-badge">CLI-Based</span>
+                                        </div>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row" class="feature-name">Ease of Use</th>
+                                    <td class="feature-value">
+                                        <div class="rating">★★★★★</div>
+                                        <span class="rating-text">Beginner-friendly</span>
+                                    </td>
+                                    <td class="feature-value">
+                                        <div class="rating">★★★★★</div>
+                                        <span class="rating-text">Very intuitive GUI</span>
+                                    </td>
+                                    <td class="feature-value">
+                                        <div class="rating">★★★☆☆</div>
+                                        <span class="rating-text">Command-line only</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" class="feature-name">CPU Performance</th>
+                                    <td class="feature-value">
+                                        <div class="rating">★★★★★</div>
+                                        <span class="rating-text">Optimized by our team</span>
+                                    </td>
+                                    <td class="feature-value">
+                                        <div class="rating">★★★★☆</div>
+                                        <span class="rating-text">Good CPU support</span>
+                                    </td>
+                                    <td class="feature-value">
+                                        <div class="rating">★★★☆☆</div>
+                                        <span class="rating-text">Basic CPU support</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" class="feature-name">GPU Acceleration</th>
+                                    <td class="feature-value">
+                                        <div class="rating">N/A</div>
+                                        <span class="rating-text">CPU-only optimized</span>
+                                    </td>
+                                    <td class="feature-value">
+                                        <div class="rating">★★★★★</div>
+                                        <span class="rating-text">Excellent GPU support</span>
+                                    </td>
+                                    <td class="feature-value">
+                                        <div class="rating">★★★★☆</div>
+                                        <span class="rating-text">Good GPU support</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" class="feature-name">Memory Efficiency</th>
+                                    <td class="feature-value">
+                                        <div class="rating">★★★★★</div>
+                                        <span class="rating-text">Lightweight & low-end PC optimized</span>
+                                    </td>
+                                    <td class="feature-value">
+                                        <div class="rating">★★★★☆</div>
+                                        <span class="rating-text">Good optimization</span>
+                                    </td>
+                                    <td class="feature-value">
+                                        <div class="rating">★★★☆☆</div>
+                                        <span class="rating-text">Standard efficiency</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" class="feature-name">Model Support</th>
+                                    <td class="feature-value">
+                                        <div class="rating">★★★★★</div>
+                                        <span class="rating-text">GGUF format specialist</span>
+                                    </td>
+                                    <td class="feature-value">
+                                        <div class="rating">★★★★☆</div>
+                                        <span class="rating-text">Multiple formats</span>
+                                    </td>
+                                    <td class="feature-value">
+                                        <div class="rating">★★★★☆</div>
+                                        <span class="rating-text">Growing model library</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" class="feature-name">API Integration</th>
+                                    <td class="feature-value">
+                                        <div class="rating">★★★★★</div>
+                                        <span class="rating-text">Full OpenAI-compatible API</span>
+                                    </td>
+                                    <td class="feature-value">
+                                        <div class="rating">★★★★☆</div>
+                                        <span class="rating-text">Built-in API server</span>
+                                    </td>
+                                    <td class="feature-value">
+                                        <div class="rating">★★★★★</div>
+                                        <span class="rating-text">REST API included</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" class="feature-name">Platform Support</th>
+                                    <td class="feature-value">
+                                        <div class="rating">Windows Only</div>
+                                        <span class="rating-text">Optimized for Windows</span>
+                                    </td>
+                                    <td class="feature-value">
+                                        <div class="rating">★★★★★</div>
+                                        <span class="rating-text">Windows, macOS, Linux</span>
+                                    </td>
+                                    <td class="feature-value">
+                                        <div class="rating">★★★★☆</div>
+                                        <span class="rating-text">macOS, Linux, Windows</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" class="feature-name">Unique Features</th>
+                                    <td class="feature-value">
+                                        <div class="rating">★★★★★</div>
+                                        <span class="rating-text">Addon system + floating button</span>
+                                    </td>
+                                    <td class="feature-value">
+                                        <div class="rating">★★★☆☆</div>
+                                        <span class="rating-text">Model browser + chat UI</span>
+                                    </td>
+                                    <td class="feature-value">
+                                        <div class="rating">★★☆☆☆</div>
+                                        <span class="rating-text">Docker integration</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" class="feature-name">Best For</th>
+                                    <td class="feature-value">
+                                        <span class="use-case">Windows users with low-end PCs</span>
+                                    </td>
+                                    <td class="feature-value">
+                                        <span class="use-case">GUI preference, experimentation</span>
+                                    </td>
+                                    <td class="feature-value">
+                                        <span class="use-case">Automation, server deployment</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Tool Recommendation Engine -->
+                <div class="tool-recommendation-engine">
+                    <h3 class="recommendation-engine__title">Get Personalized Tool Recommendation</h3>
+                    <p class="recommendation-engine__description">Based on your hardware assessment above, here are our
+                        tool recommendations:</p>
+
+                    <div class="recommendation-cards" id="toolRecommendationCards">
+                        <div class="recommendation-notice">
+                            <p>Complete the hardware compatibility checker above to see personalized tool
+                                recommendations here.</p>
+                            <a href="#hardware" class="btn btn--secondary">Check Hardware Compatibility</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Tool Selection -->
+                <div class="quick-tool-selection">
+                    <h3 class="quick-selection__title">Quick Tool Selection</h3>
+                    <div class="tool-cards">
+                        <div class="tool-card tool-card--featured" data-tool="gguf-loader">
+                            <div class="tool-card__header">
+                                <h4 class="tool-card__name">GGUF Loader</h4>
+                                <span class="tool-card__badge">Windows-Only</span>
+                            </div>
+                            <div class="tool-card__content">
+                                <p class="tool-card__description">Our team's specialized Windows-only tool, lightweight
+                                    and optimized for low-end PCs with unique addons and floating button interface.</p>
+                                <ul class="tool-card__features">
+                                    <li>CPU-only optimized (no GPU needed)</li>
+                                    <li>Lightweight for low-end PCs</li>
+                                    <li>Unique addon system</li>
+                                    <li>Floating button interface</li>
+                                </ul>
+                                <div class="tool-card__actions">
+                                    <a href="#tutorial-gguf" class="btn btn--primary">View Tutorial</a>
+                                    <a href="https://ggufloader.github.io" class="btn btn--secondary" target="_blank"
+                                        rel="noopener">Download</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tool-card" data-tool="lm-studio">
+                            <div class="tool-card__header">
+                                <h4 class="tool-card__name">LM Studio</h4>
+                                <span class="tool-card__badge">GUI-Based</span>
+                            </div>
+                            <div class="tool-card__content">
+                                <p class="tool-card__description">User-friendly graphical interface perfect for
+                                    beginners and experimentation.</p>
+                                <ul class="tool-card__features">
+                                    <li>Intuitive GUI interface</li>
+                                    <li>Built-in model browser</li>
+                                    <li>Easy configuration</li>
+                                    <li>Chat interface included</li>
+                                </ul>
+                                <div class="tool-card__actions">
+                                    <a href="#tutorial-lm-studio" class="btn btn--primary">View Tutorial</a>
+                                    <a href="https://lmstudio.ai/" class="btn btn--secondary" target="_blank"
+                                        rel="noopener">Download</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tool-card" data-tool="ollama">
+                            <div class="tool-card__header">
+                                <h4 class="tool-card__name">Ollama</h4>
+                                <span class="tool-card__badge">CLI-Based</span>
+                            </div>
+                            <div class="tool-card__content">
+                                <p class="tool-card__description">Command-line tool ideal for automation, scripting, and
+                                    server deployments.</p>
+                                <ul class="tool-card__features">
+                                    <li>Command-line interface</li>
+                                    <li>Docker support</li>
+                                    <li>API-first design</li>
+                                    <li>Server deployment ready</li>
+                                </ul>
+                                <div class="tool-card__actions">
+                                    <a href="#tutorial-ollama" class="btn btn--primary">View Tutorial</a>
+                                    <a href="https://ollama.ai/" class="btn btn--secondary" target="_blank"
+                                        rel="noopener">Download</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tutorials Section Placeholder -->
+        <section class="section" id="tutorials">
+            <div class="container">
+                <h2 class="section__title">Step-by-Step Tutorials</h2>
+                <p class="section__description">Detailed guides for setting up each tool</p>
+
+                <div class="tutorial-placeholder">
+                    <p>Tutorial content will be implemented in future tasks. Each tool will have comprehensive
+                        step-by-step instructions.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="section" id="troubleshooting">
+            <div class="container">
+                <h2 class="section__title">Frequently Asked Questions</h2>
+                <p class="section__description">Common questions about running ChatGPT-OSS models locally</p>
+
+                <div class="faq-container">
+                    <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <h3 class="faq-question" itemprop="name">Can I run ChatGPT-OSS models without a GPU?</h3>
+                        <div class="faq-answer" itemscope itemprop="acceptedAnswer"
+                            itemtype="https://schema.org/Answer">
+                            <div itemprop="text">
+                                <p>Yes, you can run ChatGPT-OSS models on CPU-only systems. The 20B model runs at 2-5
+                                    tokens/second on CPU, while the 120B model is very slow at 0.5-1 tokens/second. GGUF
+                                    Loader is specifically optimized for CPU-only Windows systems and provides the best
+                                    performance for low-end PCs.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <h3 class="faq-question" itemprop="name">What are the minimum hardware requirements for
+                            ChatGPT-OSS 20B?</h3>
+                        <div class="faq-answer" itemscope itemprop="acceptedAnswer"
+                            itemtype="https://schema.org/Answer">
+                            <div itemprop="text">
+                                <p>For ChatGPT-OSS 20B, you need:</p>
+                                <ul>
+                                    <li><strong>RAM:</strong> 16GB minimum (32GB recommended)</li>
+                                    <li><strong>Storage:</strong> 40GB free space</li>
+                                    <li><strong>CPU:</strong> Any modern processor</li>
+                                    <li><strong>GPU:</strong> Optional (improves performance significantly)</li>
+                                    <li><strong>OS:</strong> Windows (for GGUF Loader)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <h3 class="faq-question" itemprop="name">Why choose GGUF Loader over other tools?</h3>
+                        <div class="faq-answer" itemscope itemprop="acceptedAnswer"
+                            itemtype="https://schema.org/Answer">
+                            <div itemprop="text">
+                                <p>GGUF Loader offers several unique advantages:</p>
+                                <ul>
+                                    <li><strong>Windows-optimized:</strong> Specifically designed for Windows systems
+                                    </li>
+                                    <li><strong>CPU-only focus:</strong> Optimized for systems without dedicated GPUs
+                                    </li>
+                                    <li><strong>Lightweight:</strong> Perfect for low-end PCs and older hardware</li>
+                                    <li><strong>Unique features:</strong> Addon system and floating button interface
+                                    </li>
+                                    <li><strong>Team expertise:</strong> Developed by specialists in GGUF format</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <h3 class="faq-question" itemprop="name">Can I run ChatGPT-OSS 120B on a regular PC?</h3>
+                        <div class="faq-answer" itemscope itemprop="acceptedAnswer"
+                            itemtype="https://schema.org/Answer">
+                            <div itemprop="text">
+                                <p>ChatGPT-OSS 120B has high system requirements and is not suitable for regular PCs:
+                                </p>
+                                <ul>
+                                    <li><strong>RAM:</strong> 64GB minimum (128GB+ recommended)</li>
+                                    <li><strong>Storage:</strong> 240GB free space</li>
+                                    <li><strong>Performance:</strong> Very slow on CPU-only (0.5-1 tokens/second)</li>
+                                    <li><strong>Recommendation:</strong> Better suited for enterprise-grade hardware
+                                    </li>
+                                </ul>
+                                <p>For most users, the 20B model provides a better balance of performance and hardware
+                                    requirements.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <h3 class="faq-question" itemprop="name">What makes GGUF Loader's addon system unique?</h3>
+                        <div class="faq-answer" itemscope itemprop="acceptedAnswer"
+                            itemtype="https://schema.org/Answer">
+                            <div itemprop="text">
+                                <p>GGUF Loader's addon system provides:</p>
+                                <ul>
+                                    <li><strong>Extensibility:</strong> Add custom functionality without modifying core
+                                        software</li>
+                                    <li><strong>Floating button interface:</strong> Quick access to frequently used
+                                        features</li>
+                                    <li><strong>Windows integration:</strong> Deep integration with Windows-specific
+                                        features</li>
+                                    <li><strong>Community addons:</strong> Growing library of community-developed
+                                        extensions</li>
+                                    <li><strong>Easy installation:</strong> Simple drag-and-drop addon installation</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <h3 class="faq-question" itemprop="name">How do I optimize performance on a low-end PC?</h3>
+                        <div class="faq-answer" itemscope itemprop="acceptedAnswer"
+                            itemtype="https://schema.org/Answer">
+                            <div itemprop="text">
+                                <p>To get the best performance on low-end hardware:</p>
+                                <ul>
+                                    <li><strong>Use GGUF Loader:</strong> Specifically optimized for low-end Windows PCs
+                                    </li>
+                                    <li><strong>Close other applications:</strong> Free up RAM for the AI model</li>
+                                    <li><strong>Choose 20B model:</strong> Better performance than 120B on limited
+                                        hardware</li>
+                                    <li><strong>Configure threads:</strong> Use all CPU cores but leave 1-2 for system
+                                    </li>
+                                    <li><strong>Consider quantized models:</strong> Smaller file sizes with minimal
+                                        quality loss</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Additional Troubleshooting -->
+                <div class="troubleshooting-section">
+                    <h3>Common Issues & Solutions</h3>
+                    <div class="issue-grid">
+                        <div class="issue-card">
+                            <h4>Out of Memory Error</h4>
+                            <p><strong>Solution:</strong> Close other applications, reduce model size, or upgrade RAM.
+                                GGUF Loader's memory optimization helps minimize this issue.</p>
+                        </div>
+                        <div class="issue-card">
+                            <h4>Slow Performance</h4>
+                            <p><strong>Solution:</strong> Use GGUF Loader for CPU optimization, ensure adequate RAM, and
+                                consider the 20B model for better speed on low-end hardware.</p>
+                        </div>
+                        <div class="issue-card">
+                            <h4>Installation Issues</h4>
+                            <p><strong>Solution:</strong> Ensure Windows compatibility, check antivirus settings, and
+                                verify sufficient disk space. GGUF Loader includes Windows-specific installation
+                                optimizations.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="assets/scripts/main.js"></script>
+</body>
+
+</html>

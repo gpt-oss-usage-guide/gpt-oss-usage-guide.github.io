@@ -1,0 +1,120 @@
+{
+    "name": "ChatGPT-OSS Local Setup Tutorial | GGUF Loader Team",
+    "short_name": "ChatGPT-OSS Tutorial",
+    "description": "Complete guide to running ChatGPT-OSS 20B and 120B models locally on Windows. GGUF Loader team's tutorial covers hardware requirements, CPU-only optimization, and step-by-step setup for low-end PCs.",
+    "start_url": "/?utm_source=pwa",
+    "id": "chatgpt-oss-tutorial",
+    "display": "standalone",
+    "display_override": ["window-controls-overlay", "standalone", "minimal-ui"],
+    "background_color": "#ffffff",
+    "theme_color": "#2563eb",
+    "orientation": "any",
+    "scope": "/",
+    "lang": "en-US",
+    "dir": "ltr",
+    "icons": [
+        {
+            "src": "/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "/android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "/apple-touch-icon.png",
+            "sizes": "180x180",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "/favicon-32x32.png",
+            "sizes": "32x32",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "/favicon-16x16.png",
+            "sizes": "16x16",
+            "type": "image/png",
+            "purpose": "any"
+        }
+    ],
+    "categories": ["education", "productivity", "utilities", "developer", "reference"],
+    "keywords": ["ChatGPT-OSS", "GGUF Loader", "local AI", "Windows AI", "CPU-only AI", "low-end PC AI", "AI tutorial", "machine learning", "LLM setup"],
+    "screenshots": [
+        {
+            "src": "/screenshot-wide.png",
+            "sizes": "1280x720",
+            "type": "image/png",
+            "form_factor": "wide",
+            "label": "ChatGPT-OSS Tutorial Homepage"
+        },
+        {
+            "src": "/screenshot-narrow.png",
+            "sizes": "640x1136",
+            "type": "image/png",
+            "form_factor": "narrow",
+            "label": "Hardware Requirements Checker"
+        }
+    ],
+    "shortcuts": [
+        {
+            "name": "Hardware Requirements",
+            "short_name": "Hardware",
+            "description": "Check if your PC can run ChatGPT-OSS models",
+            "url": "/#hardware",
+            "icons": [
+                {
+                    "src": "/shortcut-hardware.png",
+                    "sizes": "96x96",
+                    "type": "image/png"
+                }
+            ]
+        },
+        {
+            "name": "Tool Comparison",
+            "short_name": "Tools",
+            "description": "Compare GGUF Loader, LM Studio, and Ollama",
+            "url": "/#tools",
+            "icons": [
+                {
+                    "src": "/shortcut-tools.png",
+                    "sizes": "96x96",
+                    "type": "image/png"
+                }
+            ]
+        },
+        {
+            "name": "GGUF Loader Download",
+            "short_name": "Download",
+            "description": "Download GGUF Loader for Windows",
+            "url": "https://github.com/gguf-loader/gguf-loader",
+            "icons": [
+                {
+                    "src": "/shortcut-download.png",
+                    "sizes": "96x96",
+                    "type": "image/png"
+                }
+            ]
+        }
+    ],
+    "related_applications": [
+        {
+            "platform": "windows",
+            "url": "https://github.com/gguf-loader/gguf-loader",
+            "id": "gguf-loader"
+        }
+    ],
+    "prefer_related_applications": false,
+    "edge_side_panel": {
+        "preferred_width": 400
+    },
+    "launch_handler": {
+        "client_mode": "navigate-existing"
+    }
+}
