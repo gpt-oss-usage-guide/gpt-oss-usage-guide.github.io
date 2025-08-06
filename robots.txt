@@ -1,0 +1,60 @@
+# Robots.txt for ChatGPT-OSS Tutorial by GGUF Loader Team
+# https://chatgpt-oss-tutorial.example.com/robots.txt
+
+User-agent: *
+Allow: /
+
+# Allow all major search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+# Disallow common non-content paths
+Disallow: /assets/temp/
+Disallow: /assets/cache/
+Disallow: /*.log$
+Disallow: /admin/
+Disallow: /private/
+Disallow: /test/
+Disallow: /dev/
+
+# Allow important assets
+Allow: /assets/styles/
+Allow: /assets/scripts/
+Allow: /assets/images/
+Allow: /favicon.ico
+Allow: /apple-touch-icon.png
+Allow: /android-chrome-*.png
+Allow: /site.webmanifest
+
+# Crawl delay for respectful crawling
+Crawl-delay: 1
+
+# Sitemap location
+Sitemap: https://chatgpt-oss-tutorial.example.com/sitemap.xml
+
+# Host directive (for some search engines)
+Host: https://chatgpt-oss-tutorial.example.com

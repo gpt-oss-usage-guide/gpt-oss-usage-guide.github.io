@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+
+    <!-- Main Homepage -->
+    <url>
+        <loc>https://chatgpt-oss-tutorial.example.com/</loc>
+        <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+        <mobile:mobile/>
+        <image:image>
+            <image:loc>https://chatgpt-oss-tutorial.example.com/images/chatgpt-oss-hero.jpg</image:loc>
+            <image:title>ChatGPT-OSS Local Setup Tutorial</image:title>
+            <image:caption>Complete guide to running ChatGPT-OSS models locally with GGUF Loader</image:caption>
+        </image:image>
+    </url>
+
+    <!-- Hardware Requirements Section -->
+    <url>
+        <loc>https://chatgpt-oss-tutorial.example.com/#hardware</loc>
+        <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+        <mobile:mobile/>
+        <image:image>
+            <image:loc>https://chatgpt-oss-tutorial.example.com/images/hardware-requirements.jpg</image:loc>
+            <image:title>ChatGPT-OSS Hardware Requirements</image:title>
+            <image:caption>Hardware specifications for running ChatGPT-OSS 20B and 120B models</image:caption>
+        </image:image>
+    </url>
+
+    <!-- Tool Comparison Section -->
+    <url>
+        <loc>https://chatgpt-oss-tutorial.example.com/#tools</loc>
+        <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+        <mobile:mobile/>
+        <image:image>
+            <image:loc>https://chatgpt-oss-tutorial.example.com/images/tool-comparison.jpg</image:loc>
+            <image:title>GGUF Loader vs LM Studio vs Ollama Comparison</image:title>
+            <image:caption>Compare GGUF Loader, LM Studio, and Ollama for running ChatGPT-OSS models</image:caption>
+        </image:image>
+    </url>
+
+    <!-- Tutorials Section -->
+    <url>
+        <loc>https://chatgpt-oss-tutorial.example.com/#tutorials</loc>
+        <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+        <mobile:mobile/>
+        <image:image>
+            <image:loc>https://chatgpt-oss-tutorial.example.com/images/tutorials.jpg</image:loc>
+            <image:title>Step-by-Step ChatGPT-OSS Setup Tutorials</image:title>
+            <image:caption>Detailed tutorials for setting up ChatGPT-OSS with different tools</image:caption>
+        </image:image>
+    </url>
+
+    <!-- FAQ/Troubleshooting Section -->
+    <url>
+        <loc>https://chatgpt-oss-tutorial.example.com/#troubleshooting</loc>
+        <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+        <mobile:mobile/>
+        <image:image>
+            <image:loc>https://chatgpt-oss-tutorial.example.com/images/faq.jpg</image:loc>
+            <image:title>ChatGPT-OSS FAQ and Troubleshooting</image:title>
+            <image:caption>Frequently asked questions and solutions for ChatGPT-OSS setup</image:caption>
+        </image:image>
+    </url>
+
+    <!-- GGUF Loader Specific Pages -->
+    <url>
+        <loc>https://chatgpt-oss-tutorial.example.com/gguf-loader</loc>
+        <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <mobile:mobile/>
+        <image:image>
+            <image:loc>https://chatgpt-oss-tutorial.example.com/images/gguf-loader.jpg</image:loc>
+            <image:title>GGUF Loader - Windows-Only AI Model Loader</image:title>
+            <image:caption>GGUF Loader features: CPU-optimized, lightweight, addon system, floating button</image:caption>
+        </image:image>
+    </url>
+
+    <!-- CPU-Only Guide -->
+    <url>
+        <loc>https://chatgpt-oss-tutorial.example.com/cpu-only-guide</loc>
+        <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <mobile:mobile/>
+        <image:image>
+            <image:loc>https://chatgpt-oss-tutorial.example.com/images/cpu-only.jpg</image:loc>
+            <image:title>CPU-Only ChatGPT-OSS Setup Guide</image:title>
+            <image:caption>How to run ChatGPT-OSS models on CPU without GPU acceleration</image:caption>
+        </image:image>
+    </url>
+
+    <!-- Low-End PC Guide -->
+    <url>
+        <loc>https://chatgpt-oss-tutorial.example.com/low-end-pc-guide</loc>
+        <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <mobile:mobile/>
+        <image:image>
+            <image:loc>https://chatgpt-oss-tutorial.example.com/images/low-end-pc.jpg</image:loc>
+            <image:title>ChatGPT-OSS on Low-End PCs</image:title>
+            <image:caption>Optimize ChatGPT-OSS performance on budget and older hardware</image:caption>
+        </image:image>
+    </url>
+
+    <!-- Windows Optimization Guide -->
+    <url>
+        <loc>https://chatgpt-oss-tutorial.example.com/windows-optimization</loc>
+        <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+        <mobile:mobile/>
+        <image:image>
+            <image:loc>https://chatgpt-oss-tutorial.example.com/images/windows-optimization.jpg</image:loc>
+            <image:title>Windows-Specific ChatGPT-OSS Optimizations</image:title>
+            <image:caption>Windows-specific tips and optimizations for running ChatGPT-OSS models</image:caption>
+        </image:image>
+    </url>
+
+    <!-- Model Comparison -->
+    <url>
+        <loc>https://chatgpt-oss-tutorial.example.com/model-comparison</loc>
+        <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+        <mobile:mobile/>
+        <image:image>
+            <image:loc>https://chatgpt-oss-tutorial.example.com/images/model-comparison.jpg</image:loc>
+            <image:title>ChatGPT-OSS 20B vs 120B Model Comparison</image:title>
+            <image:caption>Compare ChatGPT-OSS 20B and 120B models for performance and requirements</image:caption>
+        </image:image>
+    </url>
+
+    <!-- Static Assets -->
+    <url>
+        <loc>https://chatgpt-oss-tutorial.example.com/site.webmanifest</loc>
+        <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+    <url>
+        <loc>https://chatgpt-oss-tutorial.example.com/robots.txt</loc>
+        <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.1</priority>
+    </url>
+
+</urlset>
